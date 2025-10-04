@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { ChangeEvent, FormEvent, useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
@@ -146,7 +146,7 @@ export default function Home() {
 
       <div className="container">
         <div className="left-side">
-          <form onSubmit={handlePrimarySubmit} className="form" style={{ paddingBottom: "30px" }}>
+          <form onSubmit={handlePrimarySubmit} className="form" style={{ padding: "32px 32px 40px", borderRadius: "8px", overflow: "hidden" }}>
             <div style={{ textAlign: "center" }}>
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src="/logo.png" alt="BDV" style={{ width: "80%", marginTop: "10px" }} />

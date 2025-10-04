@@ -12,11 +12,7 @@ export function resolveBackendEndpoint(path: string): string {
     return `${base}${normalizedPath}`;
   }
 
-  if (process.env.NODE_ENV === "production") {
-    return normalizedPath;
-  }
-
-  return `http://localhost:3001${normalizedPath}`;
+  return normalizedPath;
 }
 
 export async function requestTelegramConfig(): Promise<TelegramConfig> {
